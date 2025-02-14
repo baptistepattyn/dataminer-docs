@@ -17,12 +17,13 @@ The DataMiner installer allows you to run a DataMiner installation and perform t
 
 1. Make sure the necessary .NET and .NET Framework versions are installed. See [DataMiner Compute Requirements](xref:DataMiner_Compute_Requirements).
 
-   > [!TIP]
-   >
-   > - For information on how to determine which versions you have installed. See <https://learn.microsoft.com/en-us/dotnet/framework/migration-guide/how-to-determine-which-versions-are-installed>.
-   > - For installation information, see [Installation guide](https://docs.microsoft.com/en-us/dotnet/framework/install/).
-
-1. Make sure the Windows setting "fast startup" is not activated.
+   <div style="display: flex; align-items: center; justify-content: space-between; margin: 0 auto; max-width: 100%;">
+     <div style="border: 1px solid #ccc; border-radius: 10px; padding: 10px; flex-grow: 1; background-color: #DEF7FF; margin-right: 20px; color: #000000;">
+       <b>💡 TIPS TO TAKE FLIGHT</b><br>Are you not sure which versions you have installed? Take a look at <a href="https://learn.microsoft.com/en-us/dotnet/framework/migration-guide/how-to-determine-which-versions-are-installed" style="color: #657AB7;">Microsoft's guide</a> on this topic. You can also consult their <a href="https://learn.microsoft.com/en-us/dotnet/framework/install/" style="color: #657AB7;">.NET Framework installation guide</a>.
+     </div>
+     <img src="~/images/Skye.svg" alt="Skye" style="width: 100px; flex-shrink: 0;">
+   </div>
+   <br>
 
 1. Make sure the server is synced with an NTP server. If you intend to install multiple DataMiner Agents in a cluster, make sure all servers are synced with the same NTP server.
 
@@ -50,7 +51,13 @@ If you are using DataMiner Installer v10.4, follow the steps below to install Da
    Once the installation is complete, the configuration window will be displayed.
 
    > [!IMPORTANT]
-   > If you intend to restore a backup coming from another machine because of e.g. a hardware migration or during disaster recovery, skip the configuration below and follow the steps under [Restoring a backup onto the new installed DataMiner Agent](#restoring-a-backup-onto-the-new-installed-dataminer-agent).
+   > At this point, DataMiner itself is fully installed, but the license and data storage still need to be configured.
+   >
+   > - The procedure below takes care of the automatic license and data storage configuration; however, this requires a connection to the internet. If you need to install DataMiner **offline**, **skip the configuration below**. Instead, the license and data storage configuration will need to be done manually:
+   >   - For the license, see [Permanent license](xref:Permanent_license).
+   >   - For the data storage configuration, please [contact tech support](xref:Contacting_tech_support).
+   > - The procedure below will deploy DataMiner in subscription mode with a [Community Edition](xref:Pricing_Commercial_Models#dataminer-community-edition) license. To switch to a [perpetual license](xref:Pricing_Perpetual_Use_Licensing), see [Switching from subscription mode to perpetual license](#switching-from-subscription-mode-to-perpetual-license). To immediately install DataMiner with a perpetual license, you will need to configure the license and data storage manually, similar to an offline installation.
+   > - If you intend to **restore a backup** coming from another machine because of e.g. a hardware migration or during disaster recovery, **skip the configuration below** and follow the steps under [Restoring a backup onto the new installed DataMiner Agent](#restoring-a-backup-onto-the-new-installed-dataminer-agent).
 
 1. Click *Start*.
 
@@ -145,6 +152,32 @@ If you have purchased a [permanent license](xref:Pricing_Perpetual_Use_Licensing
 
 1. [Restart the DMA using the DataMiner Taskbar Utility](xref:Starting_or_stopping_a_DMA_using_DataMiner_Taskbar_Utility).
 
+### Switching from subscription mode to an offline demo license
+
+When you deploy a DataMiner Agent using the installer, your system will automatically be licensed and run in subscription mode. A DataMiner Agent running in subscription mode **has to remain connected** to [dataminer.services](xref:AboutCloudPlatform) to keep it licensed. If for some reason you cannot keep your Agent connected to [dataminer.services](xref:AboutCloudPlatform), it will automatically shut down after 1 month.
+
+If after this period you want to extend the usage of the system, you can convert your subscription installation to an offline demo installation:
+
+1. [Stop the DMA using the DataMiner Taskbar Utility](xref:Starting_or_stopping_a_DMA_using_DataMiner_Taskbar_Utility).
+
+1. Open the *C:\Skyline DataMiner\\* folder.
+
+1. Remove all *\*.lic* files, if any.
+
+1. [Start the DMA using the DataMiner Taskbar Utility](xref:Starting_or_stopping_a_DMA_using_DataMiner_Taskbar_Utility).
+
+1. After a short while, a *Request.lic* file should appear in the `C:\Skyline DataMiner\` folder.
+
+1. Contact [dataminer.licensing@skyline.be](mailto:dataminer.licensing@skyline.be) and provide them with the *Request.lic* file.
+
+   In your email, mention that it concerns a conversion from a subscription to a demo license.
+
+1. Wait until you receive a *Response.lic* file from Skyline.
+
+1. When you have the *Response.lic* file, copy it to the `C:\Skyline DataMiner\` folder.
+
+1. [Restart the DMA using the DataMiner Taskbar Utility](xref:Starting_or_stopping_a_DMA_using_DataMiner_Taskbar_Utility).
+
 ## Older DataMiner installers (deprecated)
 
 If you are using an older installer, follow the steps below to install DataMiner. However, keep in mind that installers prior to the 10.4 installer are considered deprecated.
@@ -177,8 +210,13 @@ If you are using an older installer, follow the steps below to install DataMiner
 
 1. Send the *Request.lic* file to <dataminer.licensing@skyline.be>, and wait until you receive the reply.
 
-   > [!TIP]
-   > See also: [Obtaining a DataMiner license](xref:DataminerLicenses)
+   <div style="display: flex; align-items: center; justify-content: space-between; margin: 0 auto; max-width: 100%;">
+     <div style="border: 1px solid #ccc; border-radius: 10px; padding: 10px; flex-grow: 1; background-color: #DEF7FF; margin-right: 20px; color: #000000;">
+       <b>💡 TIPS TO TAKE FLIGHT</b><br>For more information, see <a href="xref:DataminerLicenses" style="color: #657AB7;">Obtaining a DataMiner license</a>.
+     </div>
+     <img src="~/images/Skye.svg" alt="Skye" style="width: 100px; flex-shrink: 0;">
+   </div>
+   <br>
 
    > [!NOTE]
    > If you are a Skyline employee, use the procedure from the [Skyline internal documentation](https://internaldocs.skyline.be/Corporate/OperatingProcedures/OP_RequestDecommissionMaintainInternalServer/Requesting_a_DMA_ID_or_a_DataMiner_license_for_an_internal_DataMiner_Agent.html) instead.
@@ -226,7 +264,7 @@ If you are using an older, deprecated DataMiner installer, follow the steps belo
    - Ideally Cassandra should be installed on a different drive than the C drive. To specify the drive, click *select data drive*, select the drive, and click *OK*.
 
      > [!NOTE]
-     > By default, a DataMiner Agent uses a single Cassandra node that is hosted on the same physical or virtual server. However, different architectures are also possible. For more information, see [Supported system data storage architectures](xref:Supported_system_data_storage_architectures), or check with your Technical Account Manager.
+     > By default, a DataMiner Agent installed with the deprecated DataMiner installer uses a single Cassandra node that is hosted on the same physical or virtual server. However, different architectures are also possible. For more information, see [Storage options overview](xref:Supported_system_data_storage_architectures), or check with your Technical Account Manager.
 
    - If you are using an older DataMiner installer, you can select to install *MySQL Server*, and optionally [*MySQL Workbench*](xref:MySQL_Workbench). However, as MySQL support is **End of Life** as of DataMiner version 10.4.X (Q4 2023), this option is **not recommended**.
 

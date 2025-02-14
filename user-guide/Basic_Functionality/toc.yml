@@ -237,6 +237,8 @@ items:
               topicUid: Customizing_alarm_grouping_rules
           - name: Monitoring of trend patterns
             topicUid: Monitoring_of_trend_patterns
+          - name: Relational anomaly detection
+            topicUid: Relational_anomaly_detection
           - name: Providing user feedback
             topicUid: Providing_user_feedback
           - name: Tutorials
@@ -247,6 +249,8 @@ items:
               topicUid: Anomaly_Feedback_Tutorial
             - name: Creating an anomaly overview dashboard
               topicUid: Creating_Anomaly_Overview_Dashboard
+            - name: Staying ahead of issues with proactive cap detection
+              topicUid: Proactive_Cap_Detection_Tutorial
             - name: Fine-tuning incident tracking
               topicUid: Incident_Tracking_Configuration_Tutorial
       - name: Advanced alarm functionality

@@ -1,5 +1,6 @@
 ---
 uid: Creating_a_DaaS_system_FAQ
+keywords: cloud faq
 ---
 
 # Frequently asked questions related to DaaS
@@ -8,8 +9,12 @@ uid: Creating_a_DaaS_system_FAQ
 
 DataMiner credits are a form of currency used to subscribe to DataMiner software and hosting services.
 
-> [!TIP]
-> For more information, see [Usage terms](xref:Pricing_Usage_based_service#usage-terms).
+<div style="display: flex; align-items: center; justify-content: space-between; margin: 0 auto; max-width: 100%;">
+  <div style="border: 1px solid #ccc; border-radius: 10px; padding: 10px; flex-grow: 1; background-color: #DEF7FF; margin-right: 20px; color: #000000;">
+    <b>💡 TIPS TO TAKE FLIGHT</b><br>Unfamiliar with terms like "DataMiner credits"? Take a look at our list of <a href="xref:Pricing_Usage_based_service#usage-terms" style="color: #657AB7;">usage terms</a>.
+  </div>
+  <img src="~/images/Skye.svg" alt="Skye" style="width: 100px; flex-shrink: 0;">
+</div>
 
 ### Where can I check the current DataMiner credit balance of my organization?
 
@@ -71,13 +76,11 @@ For more information, see [Data resilience and backups](xref:STaaS#data-resilien
 
 ### Is it possible to make a local backup of all data?
 
-You can set up your own offload or "central" database in your DaaS system at no additional subscription cost. That database will contain an offline copy of all (or some of) the data in the general DMA databases.
-
-See also: [Offload database](xref:Offload_database).
+This is currently not possible. Skyline takes regular backups of all systems, which they can use to restore systems. If you want to get access to a backup of your system, please contact <daas@dataminer.services>.
 
 ### Is it possible to copy data from Azure and store it locally?
 
-You can use the DataMiner API to copy data from Azure at no additional subscription cost.
+You can use the DataMiner API to copy data from Azure at no additional subscription cost. This requires a site-to-site VPN connection. To set up this connection, contact <daas@dataminer.services>.
 
 ### How can a DaaS system connect to on-premises and cloud resources?
 

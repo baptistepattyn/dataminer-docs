@@ -1,5 +1,6 @@
 ---
 uid: Connect_to_cloud_via_proxy
+keywords: cloud connection, cloud proxy
 ---
 
 # Connecting to dataminer.services via proxy server
@@ -12,7 +13,7 @@ To configure this:
 
 1. [Connect to dataminer.services](xref:Connect_to_dataminer_services).
 
-1. In the folder `C:\ProgramData\Skyline Communications\DxMs Shared\` on the DMA, configure the *ProxyOptions* in the file *appsettings.proxy.json* as follows:
+1. In the folder `C:\ProgramData\Skyline Communications\DxMs Shared\` on the DMA, create the file *appsettings.proxy.json* if it does not already exist, and configure the *ProxyOptions* as follows:
 
    ```json
    {
